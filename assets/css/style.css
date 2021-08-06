@@ -33,6 +33,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  padding: 2rem 9%;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -83,12 +87,180 @@ header .icons a:hover{
 }
 
 
+/* Hero CSS */
+.home {
+  padding: 0;
+  position: relative;
+}
+
+.home .slider-content .slide {
+  min-height: 100vh;
+  padding: 0 9%;
+  padding-top: 9rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.home .slider-content .slide .slide-content {
+  flex: 1 1 40rem;
+  animation: slideContent .5s linear .5s backwards;
+  margin-bottom: 20vh;
+}
+
+.home .slider-content .slide .slide-content span {
+  font-size: 2rem;
+  color: orangered;
+}
+
+.home .slider-content .slide .slide-content h3 {
+  font-size: 5rem;
+  color: #000;
+}
+
+.home .slider-content .slide .slide-content p {
+  font-size: 1.5rem;
+  color: #666;
+  letter-spacing: .5px;
+  line-height: 3rem;
+  padding: .5rem 0;
+}
 
 
-/* Responsive CSS */
+
+.home .slider-content .slide .img {
+  flex: 1 1 50rem;
+  padding-bottom: 15rem;
+  position: relative;
+  z-index: 0;
+}
+
+.home .slider-content .slide .img .shoe {
+  max-width: 100%;
+  transform: rotate(-10deg);
+  animation: shoeSlide 1s linear;
+}
+
+
+.btn {
+  display: inline-block;
+  border: .1rem solid #000;
+  border-radius: .5rem;
+  color: #000;
+  margin: 1rem 0 0 0;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 1rem 3rem;
+  text-align: center
+}
+
+.btn:hover {
+  background: #000;
+  color: #fff;
+  transition: all .3s ease;
+}
+
+.home #prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+  left: 3rem;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.home #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: #000;
+  background-color: #fff;
+  right: 3rem;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: auto;
+}
+
+.home #prev:hover,.home #next:hover{
+  color: #fff;
+  background-color: orangered;
+  border: 1px solid orangered;
+}
+
+
+/* CSS Tricks */
+
+.home .slider-content {
+  display: none;
+}
+
+.home .slider-content.active {
+  display: flex;
+}
+
+/* Animation CSS */
+@keyframes slideContent {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+}
+
+@keyframes shoeSlide {
+  0% {
+    transform: rotate(0deg) scale(.1);
+  }
+}
+
+
+
+/* Responsive  CSS */
 
 @media (max-width: 768px){
   #menu-bar {
    display: block;
   }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: -120%;
+    width: 100%;
+    border-top: .1rem solid rgba(0, 0, 0, 0.144);
+    background-color: #fff;
+  }
+
+    header .navbar.active {
+    left: 0;
+    transition: all .5s ease-in-out;
+  }
+
+  header .navbar a {
+    display: block;
+    padding: 1rem;
+    margin: 1rem;
+    border: .1rem solid #000;
+    font-size: 2rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    text-align: center;
+  }
 }
+
+
